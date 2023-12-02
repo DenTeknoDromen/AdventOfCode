@@ -1,19 +1,26 @@
+import java.io.File;
+import java.util.Scanner;
+
+
 public class DEC1 {
     public static void main(String[] args) throws Exception {
-        String[] indata = {"pqr3stu8vwx", "1abc2", "a1b2c3d4e5f", "treb7uchet"};
+        //Opens input file for reading
+        File input = new File("src/DEC1_input.txt");
+        Scanner reader = new Scanner(input);
         int sum = 0;
-        
-        //Converts every string in indata to char_array and sends it to get_num
-        //Adds returned int to sum
-        for (String i : indata) {
-            char[] lst_indata = i.toCharArray();
-            sum += get_num(lst_indata);
+
+        //Sends every line to get_num and adds return integer to sum
+        while (reader.hasNextLine()) {
+            String data = reader.nextLine();
+            System.out.println(data);
+            sum += get_num(data);
         }
+        reader.close();
         System.out.println("Calibration value: " + sum);
-
         }
 
-        static int get_num(char[] lst_indata) { 
+        static int get_num(String indata) { 
+            char[] lst_indata = indata.toCharArray();
             String str_num  = "";
             int num = 0;
             int len_indata = lst_indata.length;
