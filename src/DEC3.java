@@ -6,7 +6,8 @@ public class DEC3 {
     static ArrayList<Integer> xarray = new ArrayList<Integer>();
     static ArrayList<Integer> yarray = new ArrayList<Integer>();
     static ArrayList<String> possible_cors = new ArrayList<String>();
-    static ArrayList<String> nums = new ArrayList<String>();
+    static int sum = 0;
+    //static ArrayList<String> nums = new ArrayList<String>();
 
     public static void main(String[] args) throws Exception {
         File input = new File("src/DEC3_input.txt");
@@ -36,6 +37,7 @@ public class DEC3 {
         System.out.println(xarray.toString());
         System.out.println(yarray.toString());
         System.out.println(possible_cors);
+        System.out.println(sum);
 
     }
 
@@ -70,17 +72,21 @@ public class DEC3 {
         char[] char_data = data.toCharArray();
         String curr_cord = "";
         String curr_num = "";
-        boolean
+        boolean check = false;
         for (int i = 0; i < char_data.length; i++) {
             curr_cord = String.valueOf(x) + String.valueOf(i);
-            if (possible_cors.contains(curr_cord)) {
-                int smallindex = i;
-                while (smallindex < char_data.length && Character.isDigit(char_data[smallindex])) {
-                    curr_num += char_data[smallindex];
-                    smallindex += 1;
-                }                
+            check = (possible_cors.contains(curr_cord));
+
+            int smallindex = i;
+            while (smallindex < char_data.length && Character.isDigit(char_data[smallindex])) {
+                curr_num += char_data[smallindex];
+                smallindex += 1;
             }
 
+            if (check) {
+                System.out.println(curr_num);
+                //sum += (Integer.parseInt(curr_num));
+            }
 
         }
     }
