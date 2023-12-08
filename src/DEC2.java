@@ -1,24 +1,20 @@
 import java.io.File;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.MatchResult;
 
 public class DEC2 {
     public static void main(String[] args) throws Exception{
-        File input = new File("src/example.txt");
+        File input = new File("example.txt");
         Scanner reader = new Scanner(input);
-
-        Pattern pattern = Pattern.compile("[0-9] blue|red|green");
-        
 
         while (reader.hasNextLine()) {
             String data = reader.nextLine();
-            Matcher matcher = pattern.matcher(data);
-            boolean matchFound = matcher.find();
-            String output = (matchFound) ? matcher.group() : "regex not found";
-            System.out.println(output);
+            data = data.split(": ")[1];
 
+            String[] lst_data = data.split("; ");
+            
+            System.out.println(Arrays.toString(lst_data));
         }
         reader.close();
     }
