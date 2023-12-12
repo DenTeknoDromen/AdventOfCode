@@ -15,8 +15,7 @@ public class DEC9 {
             String[] data = reader.nextLine().split(" ");
             int[] int_data = get_intarray(data);
 
-            //finalnum = int_data[int_data.length - 1];
-            finalnum = 0;
+            finalnum = int_data[int_data.length - 1];
             finalnum += calc(int_data);
             System.out.println("finalnum: " + finalnum + "\n");            
             
@@ -49,14 +48,15 @@ public class DEC9 {
             check = (next_array[i] == 0) ? check + 1 : check + 0;
             i += 1;
         }
-        //int finalnum = next_array[len - 1];
-        int finalnum = next_array[0];
+        int finalnum = next_array[len - 1];
+        //int finalnum = next_array[0];
         System.out.println(finalnum);
 
         // Calls another instance of method if array is not all 0
         if (check == len) {
             return finalnum;
         }
-        return finalnum - calc(next_array);
+
+        return finalnum + calc(next_array);
     }
 }
