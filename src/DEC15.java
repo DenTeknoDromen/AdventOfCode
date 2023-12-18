@@ -47,8 +47,12 @@ public class DEC15 {
     }
     static void add_lens(String lens_label, String focal_len, int int_label) {
         String lens_name = lens_label + focal_len;
-        if (boxes.get(int_label).contains(lens_label)) {
-            boxes.get(int_label).
+        for (int i = 0; i < boxes.get(int_label).size(); i++) {
+            if (boxes.get(int_label).get(i).contains(lens_label)) {
+                boxes.get(int_label).set(i, lens_name + focal_len);
+            } else {
+                boxes.get(int_label).add(lens_name + focal_len);
+            }
         }
     }
     static void remove_lens(int int_label, String lens_name) {

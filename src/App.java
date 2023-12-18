@@ -7,8 +7,11 @@ public class App {
         testlist.add("Äpple");
         testlist.add("Päron");
         testlist.add("Banan");
-        if (testlist.stream().anyMatch("Ban"::contains)) {
-            System.out.println("True");
+        for (String i : testlist) {
+            if (i.contains("Ban")) {
+                System.out.println("True");
+            }            
         }
+
     }
 }
