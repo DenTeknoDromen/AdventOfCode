@@ -1,3 +1,6 @@
+// https://adventofcode.com/2023/day/6
+// **
+
 public class DEC6 {
     public static void main(String[] args) throws Exception{
         //Lists for dealing woth first gold star

@@ -1,6 +1,9 @@
 import java.io.File;
 import java.util.Scanner;
 
+// https://adventofcode.com/2023/day/1
+// **
+
 public class DEC1 {
     public static void main(String[] args) throws Exception {
         // Opens input file for reading

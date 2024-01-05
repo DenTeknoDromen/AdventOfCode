@@ -3,6 +3,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+// https://adventofcode.com/2023/day/4
+// *
+
 public class DEC4 {
     static ArrayList<Integer> cardList = new ArrayList<Integer>();
     static int card_index = 0;

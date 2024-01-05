@@ -3,6 +3,9 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// https://adventofcode.com/2023/day/15
+// *
+
 public class DEC15 {
     static HashMap<Integer, ArrayList<String>> boxes = new HashMap<Integer, ArrayList<String>>();
     public static void main(String[] args) throws Exception{

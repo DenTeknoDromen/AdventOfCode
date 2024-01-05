@@ -2,6 +2,9 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Scanner;
 
+// https://adventofcode.com/2023/day/9
+// *
+
 public class DEC9 {
 
     public static void main(String[] args) throws Exception {

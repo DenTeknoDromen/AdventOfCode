@@ -3,6 +3,9 @@ import java.util.Scanner;
 import java.util.HashMap;
 import java.util.ArrayList;
 
+// https://adventofcode.com/2023/day/8
+// *
+
 public class DEC8 {
     static HashMap<String, String[]> mapHashMap = new HashMap<String, String[]>();
     static ArrayList<String> stringend = new ArrayList<String>();

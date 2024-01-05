@@ -3,6 +3,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.HashMap;
 
+// https://adventofcode.com/2023/day/2
+// **
+
 public class DEC2 {
     static HashMap<String, Integer> colour_tovalue = new HashMap<String, Integer>();
     public static void main(String[] args) throws Exception{
