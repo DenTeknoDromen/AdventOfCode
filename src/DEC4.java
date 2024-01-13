@@ -7,19 +7,24 @@ import java.util.ArrayList;
 // *
 
 public class DEC4 {
+    // List of cards
     static ArrayList<Integer> cardList = new ArrayList<Integer>();
     static int card_index = 0;
 
     public static void main(String[] args) throws Exception{
+        // Reads input from file
         File input = new File("DEC4_input.txt");
         Scanner reader = new Scanner(input);
+
         int sum = 0;
         int matches = 0;
         int points = 0;
 
+        // Creates default list of cards
         for (int x = 0; x < 6; x++) {
             cardList.add(1);
         }
+        
         int index = 1;
         String data = reader.nextLine();        
         while (reader.hasNextLine()) {

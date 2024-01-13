@@ -30,7 +30,7 @@ public class DEC19{
         steps = curr_flow.split(", ");
         // if array string constains ">"
         for (String x : steps) {
-            if (x.contains(">")) ) {
+            if (x.contains(">")) {
 
                 //Split string at ":" and ">"
                 substep = x.split(":");
