@@ -1,3 +1,4 @@
+package DEC1;
 import java.io.File;
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ import java.util.Scanner;
 public class DEC1 {
     public static void main(String[] args) throws Exception {
         // Opens input file for reading
-        File input = new File("src/DEC1_input.txt");
+        File input = new File("DEC1_input.txt");
         Scanner reader = new Scanner(input);
         int sum = 0;
 
@@ -15,13 +16,13 @@ public class DEC1 {
         while (reader.hasNextLine()) {
             String data = reader.nextLine();
             System.out.println(data);
-            sum += get_alphanum(data);
+            sum += getAlphaNum(data);
         }
         reader.close();
         System.out.println("Calibration value: " + sum);
     }
-
-    static int get_num(String indata) {
+    // Part One
+    static int getNum(String indata) {
         char[] lst_indata = indata.toCharArray();
         String str_num = "";
         int num = 0;
@@ -46,8 +47,8 @@ public class DEC1 {
         System.out.println(num);
         return num;
     }
-
-    static int get_alphanum(String indata) {
+    // Part Two
+    static int getAlphaNum(String indata) {
         int firstindex = 99999;
         int firstnum = 0;
         int lastindex = 0;

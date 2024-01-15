@@ -1,3 +1,4 @@
+package DEC2;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -9,7 +10,7 @@ import java.util.HashMap;
 public class DEC2 {
     static HashMap<String, Integer> colour_tovalue = new HashMap<String, Integer>();
     public static void main(String[] args) throws Exception{
-        File input = new File("dec2_input.txt");
+        File input = new File("DEC2_input.txt");
         Scanner reader = new Scanner(input);
         int output = 0;
         int index = 1;
@@ -35,7 +36,7 @@ public class DEC2 {
         System.out.println("output: " + output);
         reader.close();
     }
-    static int get_game(String data, int id){
+    static int getGame(String data, int id){
         // Creates a list with colours and values
         String[] lst_data = data.split("; |, ");
         System.out.println(Arrays.toString(lst_data));
@@ -56,7 +57,7 @@ public class DEC2 {
         return id;
     }
     static int get_game2(String data){
-        resest_hashmap();
+        resetHashMap();
         // Creates a list with colours and values
         String[] lst_data = data.split("; |, ");
         System.out.println(Arrays.toString(lst_data));
@@ -71,14 +72,14 @@ public class DEC2 {
                 colour_tovalue.put(colours, num);
             }
         }
-        return multiply_hashmap();
+        return multiplyHashMap();
     }
-    static void resest_hashmap(){
+    static void resetHashMap(){
         colour_tovalue.put("red", 0);
         colour_tovalue.put("green", 0);
         colour_tovalue.put("blue", 0);
     }
-    static int multiply_hashmap(){
+    static int multiplyHashMap(){
         int product = colour_tovalue.get("red") * 
                         colour_tovalue.get("green") *
                         colour_tovalue.get("blue");
