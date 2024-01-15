@@ -1,4 +1,4 @@
-with open("src/DEC8_input.txt", "r") as f:
+with open("DEC8_input.txt", "r") as f:
     data = f.readlines()
 
 dict_map = {}
