@@ -4,7 +4,7 @@ public class test {
 
   // Create a class constructor for the Main class
   public test(int y, String test) {
-    if ("")
+    if (test == "")
     x = y;  // Set the initial value for the class attribute x
   }
 

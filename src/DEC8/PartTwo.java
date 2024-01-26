@@ -80,8 +80,12 @@ public class PartTwo {
         int check = 0;
         for (String i : stringend) {          
             if (i.substring(2).equals("Z")) {
+                System.out.println(i);
                 check += 1;
             }
+        }
+        if (check > 2) {
+            System.out.println(check);
         }
 
         return (check == stringend.size());
