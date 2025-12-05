@@ -6,7 +6,7 @@ public class Dec3 {
         File input = new File("./input");
         Scanner reader = new Scanner(input);
 
-        int output = 0;
+        long output = 0;
 
         while (reader.hasNextLine()) {
             String data = reader.nextLine();
@@ -20,15 +20,16 @@ public class Dec3 {
         reader.close();
     }
 
-    static int findLargestInt(int[] joltageArray) {
+    static long findLargestInt(int[] joltageArray) {
+        long joltage = 0;
         int largestIntIndex = 0;
-        for (int i = 0; i < joltageArray.length - 1; i++) {
-            largestIntIndex = (joltageArray[i] > joltageArray[largestIntIndex]) ? i : largestIntIndex;
+        for (int a = 11; a >= 0; a--) {
+            for (int b = largestIntIndex; b < joltageArray.length - a; b++) {
+                largestIntIndex = (joltageArray[b] > joltageArray[largestIntIndex]) ? b : largestIntIndex;
+            }
+            joltage += (long)joltageArray[largestIntIndex] * (long)Math.pow(10, a);
+            largestIntIndex += 1;
         }
-        int secondIntIndex = largestIntIndex + 1;
-        for (int i = largestIntIndex + 1; i < joltageArray.length; i++) {
-            secondIntIndex = (joltageArray[i] > joltageArray[secondIntIndex]) ? i : secondIntIndex;
-        }
-        return (joltageArray[largestIntIndex] * 10) + joltageArray[secondIntIndex];
+        return joltage;
     }
 }
