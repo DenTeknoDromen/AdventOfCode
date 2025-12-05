@@ -18,6 +18,7 @@ public class Dec1 {
             password += output[1];
         }
         System.out.println("The password is: " + password);
+        // 100-abs(start)) % 100
         reader.close();
     }
 
