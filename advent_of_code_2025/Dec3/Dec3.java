@@ -14,20 +14,22 @@ public class Dec3 {
             for (int i = 0; i < data.length(); i++) {
                 joltageArray[i] = data.charAt(i) - '0';
             }
-            output += findLargestInt(joltageArray);
+            output += Long.parseLong(findLargestValue(joltageArray));
         }
         System.out.println("Output: " + output);
         reader.close();
     }
 
-    static long findLargestInt(int[] joltageArray) {
-        long joltage = 0;
+    static String findLargestValue(int[] joltageArray) {
+        //long joltage = 0;
+        String joltage = "";
         int largestIntIndex = 0;
         for (int a = 11; a >= 0; a--) {
             for (int b = largestIntIndex; b < joltageArray.length - a; b++) {
                 largestIntIndex = (joltageArray[b] > joltageArray[largestIntIndex]) ? b : largestIntIndex;
             }
-            joltage += (long)joltageArray[largestIntIndex] * (long)Math.pow(10, a);
+            //joltage += (long)joltageArray[largestIntIndex] * (long)Math.pow(10, a);
+            joltage = joltage.concat(String.valueOf(joltageArray[largestIntIndex]));
             largestIntIndex += 1;
         }
         return joltage;
