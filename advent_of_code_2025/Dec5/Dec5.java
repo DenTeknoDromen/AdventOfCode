@@ -56,7 +56,7 @@ public class Dec5 {
                     valid.add(rangeIndex);
                     valid.add(idRangeB.get(i));
                     validRanges += ((idRangeB.get(i) - rangeIndex) + 1);
-                    rangeIndex = idRangeB.get(i);
+                    rangeIndex = idRangeB.get(i); 
                     //System.out.println("rangeindex: " + rangeIndex);
                     //System.out.println("validRanges: " + validRanges);
                     break;
@@ -65,8 +65,8 @@ public class Dec5 {
             System.out.println(rangeIndex);
             //rangeIndex += 1;
 
-            //tempVar = idRangeA.get(getSmallestId(rangeIndex, largestID));
-            //rangeIndex = (tempVar > rangeIndex) ? tempVar : rangeIndex + 1;
+            tempVar = idRangeA.get(getSmallestId(rangeIndex, largestID));
+            rangeIndex = (tempVar > rangeIndex) ? tempVar : rangeIndex + 1;
             //System.out.println(validRanges);
         }
         System.out.println(valid);
