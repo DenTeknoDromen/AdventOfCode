@@ -7,17 +7,13 @@ public class Dec7 {
         File input = new File("./input");
         Scanner reader = new Scanner(input);
 
-        ArrayList<char[]> grid = new ArrayList<char[]>();
         long output = 0;
+        char[] beams = reader.nextLine().toCharArray();
 
         while (reader.hasNextLine()) {
-            String data = reader.nextLine();
-            grid.add(data.toCharArray());
-        }
-        char[] beams = grid.get(0);
-        for (int row = 1; row < grid.size() - 1; row++) {
+            char[] grid = reader.nextLine().toCharArray();
             for (int col = 0; col < beams.length - 1; col++) {
-                if (beams[col] != '.' && grid.get(row)[col] == '^') {
+                if (beams[col] != '.' && grid[col] == '^') {
                     beams[col - 1] = '|';
                     beams[col] = '.';
                     beams[col + 1] = '|';
