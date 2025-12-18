@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Dec6 {
+public class Dec6Part2 {
     public static void main(String[] args) throws Exception {
         File input = new File("./input");
         Scanner reader = new Scanner(input);

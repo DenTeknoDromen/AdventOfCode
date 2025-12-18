@@ -9,7 +9,7 @@ public class Dec2 {
         String data = reader.nextLine();
         // Creates a array of every id range in the puzzle input
         String[] allRanges = data.split(",");
-        int output = 0;
+        long output = 0;
 
         // Creates an array representing the id range
         // for every range from the puzzle input
@@ -19,7 +19,11 @@ public class Dec2 {
             long[] idRange = { Long.parseLong(idRangeStr[0]),
             Long.parseLong(idRangeStr[1]) };
             for (long id = idRange[0]; id <= idRange[1]; id++) {
-                output += getInvalidId(id);
+                String strId = String.valueOf(id);
+                if (strId.length() % 2 == 0) {
+                    output += handleEvenLength(strId);
+                }
+                // output += getInvalidId(id);
             }
         }
         System.out.println("Output: " + output);
@@ -28,26 +32,26 @@ public class Dec2 {
 
     // Converts the long value to string
     // Checks if the length of the string value is odd or even
-    // Odd-length ids can only be valid
-    static long getInvalidId(long id) {
-        String strId = String.valueOf(id);
+    // Odd-length ids can only be invalid
+    // static long getInvalidId(long id) {
+    //     String strId = String.valueOf(id);
 
-        if (strId.length() % 2 != 0) {
-            return 0L; //handleOddLength(strId);
-        } else {
-            return handleEvenLength(strId);
-        }
-    }
+    //     if (strId.length() % 2 != 0) {
+    //         return 0L; //handleOddLength(strId);
+    //     } else {
+    //         return handleEvenLength(strId);
+    //     }
+    // }
 
-    static int handleOddLength(String strId) {
-        for (char num : strId.toCharArray()) {
-            if (num != strId.charAt(0)) {
-                return 0;
-            }
-        }
-        System.out.println("Invalid id: " + strId);
-        return Integer.parseInt(strId);
-    }
+    // static int handleOddLength(String strId) {
+    //     for (char num : strId.toCharArray()) {
+    //         if (num != strId.charAt(0)) {
+    //             return 0;
+    //         }
+    //     }
+    //     System.out.println("Invalid id: " + strId);
+    //     return Integer.parseInt(strId);
+    // }
 
     // Only applies to ids with a even number of digits
     // Checks if the first half of the id matches the second

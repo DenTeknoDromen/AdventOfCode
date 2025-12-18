@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Dec5 {
+public class Dec5Part2 {
 
     static ArrayList<Long> idRangeA = new ArrayList<Long>();
     static ArrayList<Long> idRangeB = new ArrayList<Long>();

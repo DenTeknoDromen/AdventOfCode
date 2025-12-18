@@ -32,7 +32,7 @@ public class Dec11 {
         }
 
         // dfs(devices, visited, "you", res);
-        dfs(devices, visited, "dac", res);
+        dfs(devices, visited, "svr", res);
 
         // int validPaths = 0;
         // for (String[] i : paths) {
@@ -47,9 +47,6 @@ public class Dec11 {
     static void dfs(HashMap<String, String[]> devices, HashMap<String, Boolean> visited, String node, LinkedList<String> res) {
         res.add(node);
 
-        if (visited.get(node)) {
-            System.out.println("I´ve been here before");
-        }
         if (node.equals("out")) {
             // System.out.println(res);
             validPaths += 1;
